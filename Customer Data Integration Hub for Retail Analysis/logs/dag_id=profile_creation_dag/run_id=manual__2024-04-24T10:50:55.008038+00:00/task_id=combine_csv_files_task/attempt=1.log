@@ -1,0 +1,91 @@
+[2024-04-24T10:50:56.916+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2024-04-24T10:50:56.927+0000] {taskinstance.py:2073} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: profile_creation_dag.combine_csv_files_task manual__2024-04-24T10:50:55.008038+00:00 [queued]>
+[2024-04-24T10:50:56.931+0000] {taskinstance.py:2073} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: profile_creation_dag.combine_csv_files_task manual__2024-04-24T10:50:55.008038+00:00 [queued]>
+[2024-04-24T10:50:56.931+0000] {taskinstance.py:2303} INFO - Starting attempt 1 of 1
+[2024-04-24T10:50:56.937+0000] {taskinstance.py:2327} INFO - Executing <Task(PythonOperator): combine_csv_files_task> on 2024-04-24 10:50:55.008038+00:00
+[2024-04-24T10:50:56.942+0000] {warnings.py:110} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:61: DeprecationWarning: This process (pid=1441) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2024-04-24T10:50:56.943+0000] {standard_task_runner.py:63} INFO - Started process 1443 to run task
+[2024-04-24T10:50:56.943+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'profile_creation_dag', 'combine_csv_files_task', 'manual__2024-04-24T10:50:55.008038+00:00', '--job-id', '59', '--raw', '--subdir', 'DAGS_FOLDER/sample-project-dag.py', '--cfg-path', '/tmp/tmpg4jdj8q5']
+[2024-04-24T10:50:56.944+0000] {standard_task_runner.py:91} INFO - Job 59: Subtask combine_csv_files_task
+[2024-04-24T10:50:56.967+0000] {task_command.py:426} INFO - Running <TaskInstance: profile_creation_dag.combine_csv_files_task manual__2024-04-24T10:50:55.008038+00:00 [running]> on host b97309cb3903
+[2024-04-24T10:50:57.012+0000] {taskinstance.py:2644} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='profile_creation_dag' AIRFLOW_CTX_TASK_ID='combine_csv_files_task' AIRFLOW_CTX_EXECUTION_DATE='2024-04-24T10:50:55.008038+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2024-04-24T10:50:55.008038+00:00'
+[2024-04-24T10:50:57.014+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2024-04-24T10:50:57.089+0000] {logging_mixin.py:188} INFO - Row_ID           False
+Order_ID         False
+ORDER_DATE       False
+SHIP_DATE        False
+SHIP_MODE        False
+CUSTOMER_ID      False
+CUSTOMER_NAME    False
+SEGMENT          False
+CITY             False
+CUST_STATE       False
+REGION           False
+PRODUCT_ID       False
+CATEGORY         False
+SUB_CATEGORY     False
+PRODUCT_NAME     False
+SALES            False
+QUANTITY         False
+DISCOUNT         False
+PROFIT           False
+dtype: bool
+[2024-04-24T10:50:57.095+0000] {logging_mixin.py:188} INFO - Row_ID           0
+Order_ID         0
+ORDER_DATE       0
+SHIP_DATE        0
+SHIP_MODE        0
+CUSTOMER_ID      0
+CUSTOMER_NAME    0
+SEGMENT          0
+CITY             0
+CUST_STATE       0
+REGION           0
+PRODUCT_ID       0
+CATEGORY         0
+SUB_CATEGORY     0
+PRODUCT_NAME     0
+SALES            0
+QUANTITY         0
+DISCOUNT         0
+PROFIT           0
+dtype: int64
+[2024-04-24T10:50:57.109+0000] {logging_mixin.py:188} INFO - False    17995
+Name: count, dtype: int64
+[2024-04-24T10:50:57.112+0000] {logging_mixin.py:188} INFO - Empty DataFrame
+Columns: [Row_ID, Order_ID, ORDER_DATE, SHIP_DATE, SHIP_MODE, CUSTOMER_ID, CUSTOMER_NAME, SEGMENT, CITY, CUST_STATE, REGION, PRODUCT_ID, CATEGORY, SUB_CATEGORY, PRODUCT_NAME, SALES, QUANTITY, DISCOUNT, PROFIT]
+Index: []
+[2024-04-24T10:50:57.113+0000] {logging_mixin.py:188} INFO - Empty DataFrame
+Columns: [Row_ID, Order_ID, ORDER_DATE, SHIP_DATE, SHIP_MODE, CUSTOMER_ID, CUSTOMER_NAME, SEGMENT, CITY, CUST_STATE, REGION, PRODUCT_ID, CATEGORY, SUB_CATEGORY, PRODUCT_NAME, SALES, QUANTITY, DISCOUNT, PROFIT]
+Index: []
+[2024-04-24T10:50:57.123+0000] {logging_mixin.py:188} INFO -        Row_ID        Order_ID ORDER_DATE  ... QUANTITY DISCOUNT     PROFIT
+3           4  US-2015-108966   11/10/15  ...        5     0.45  -383.0310
+14         15  US-2015-118983   22/11/15  ...        5     0.80  -123.8580
+15         16  US-2015-118983   22/11/15  ...        3     0.80    -3.8160
+23         24  US-2017-156909   16/07/17  ...        2     0.30    -1.0196
+27         28  US-2015-150630   17/09/15  ...        7     0.50 -1665.0522
+...       ...             ...        ...  ...      ...      ...        ...
+17990    9624  CA-2020-137449   29/06/20  ...        2     0.80   -54.5496
+17991    9625  CA-2020-137449   29/06/20  ...        3     0.30   -39.5118
+17992    9626  CA-2020-137449   29/06/20  ...        3     0.32   -96.4704
+17993    9835  CA-2019-126627   10/10/19  ...        4     0.60    -6.3000
+17994    9920  CA-2019-149272   15/03/19  ...        5     0.30  -143.4310
+
+[3365 rows x 19 columns]
+[2024-04-24T10:50:57.131+0000] {logging_mixin.py:188} INFO -              Row_ID         SALES      QUANTITY      DISCOUNT        PROFIT
+count  17995.000000  17995.000000  17995.000000  17995.000000  17995.000000
+mean    5000.612114    228.405347      3.787997      0.155972     29.077525
+std     2883.969346    607.016238      2.223209      0.206532    237.844969
+min        1.000000      0.444000      1.000000      0.000000  -6599.978000
+25%     2483.500000     17.380000      2.000000      0.000000      1.734750
+50%     5008.000000     54.816000      3.000000      0.200000      8.690000
+75%     7495.000000    209.670000      5.000000      0.200000     29.472100
+max     9994.000000  22638.480000     14.000000      0.800000   8399.976000
+[2024-04-24T10:50:57.274+0000] {python.py:237} INFO - Done. Returned value was: None
+[2024-04-24T10:50:57.274+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2024-04-24T10:50:57.280+0000] {taskinstance.py:1205} INFO - Marking task as SUCCESS. dag_id=profile_creation_dag, task_id=combine_csv_files_task, execution_date=20240424T105055, start_date=20240424T105056, end_date=20240424T105057
+[2024-04-24T10:50:57.302+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 0
+[2024-04-24T10:50:57.315+0000] {taskinstance.py:3482} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2024-04-24T10:50:57.316+0000] {local_task_job_runner.py:222} INFO - ::endgroup::
